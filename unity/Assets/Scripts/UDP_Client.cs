@@ -15,7 +15,7 @@ public class UDP_Client : MonoBehaviour
     try
     {
       client.Connect("127.0.0.1", 5500);
-      byte[] sendBytes = Encoding.ASCII.GetBytes("Hello, from Paulo");
+      byte[] sendBytes = Encoding.ASCII.GetBytes("Hello, from the client");
       client.Send(sendBytes, sendBytes.Length);
       IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Any, 5500);
       byte[] receiveBytes = client.Receive(ref remoteEndPoint);
